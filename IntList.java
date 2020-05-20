@@ -12,8 +12,10 @@ public class IntList {
         currentRest = rest;
         while(currentRest) {
             size += 1;
-            if(rest) {
-                currentRest = rest.rest;
+            if(currentRest.rest) {
+                currentRest = currentRest.rest;
+            } else {
+                return size;
             }
         }
         return size;
