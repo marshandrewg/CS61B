@@ -8,6 +8,13 @@ public class IntList {
     }
 
     public int size() {
+        if( rest == null ){
+            return 1;
+        }
+        return 1 + this.rest.size();
+    }
+
+    public iterativeSize() {
         int size = 0;
         currentRest = rest;
         while(currentRest) {
@@ -19,9 +26,5 @@ public class IntList {
             }
         }
         return size;
-    }
-
-    public iterativeSize() {
-
     }
 }
