@@ -30,7 +30,6 @@ public class LinkedListDeque<T> {
     }
 
     public void addLast(T item){
-        size += 1;
         tail.next = new Node(item, null, tail);
 
         // head                 tail
@@ -41,19 +40,36 @@ public class LinkedListDeque<T> {
         // (1) -> (2) -> (3) -> (4) -> (5) -> (1) ....
         
         tail = tail.next;
+        size += 1;
     }
 
-    public boolean isEmpty();
-    public int size();
+    public boolean isEmpty()
+        if(head){
+            return true;
+        }
+        return false;
+    
+    public int size(){
+        return size
+    }
     public void printDeque();
-    public T removeFirst(){
 
+    public T removeFirst(){
+        // head          
+        // (1)
+        //  <-> (2) <-> (3) <-> (4) -> (5)
         head = head.next;
+        //        head                 tail
+        //   <- (2) -> (3) -> (4) -> (5)
+        if(head){
+            head.prev = null;
+        }
+
         size -= 1;
     }
     public T removeLast() {
         // head                         tail
-        // (1) -> (2) -> (3) -> (4) -> (5)
+        // (1) <-> (2) <-> (3) <-> (4) -> (5)
         
         
         tail = tail.prev;
