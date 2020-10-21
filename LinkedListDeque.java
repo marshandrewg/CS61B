@@ -1,3 +1,5 @@
+
+
 /** Performs some basic linked list tests. */
 public class LinkedListDeque<T> {
     private class Node {
@@ -6,12 +8,18 @@ public class LinkedListDeque<T> {
         public Node prev;
 
         // Run as public vs private 
+        /**
+         * Creates a node object
+         * @param i item to add to node
+         * @param n next Node
+         * @param p previous node
+         * @return Node object
+         */
         public Node(T i, Node n, Node p) {
             item = i;
             next = n;
             prev = p;
         }
-
     }
     
     Node head;
@@ -43,16 +51,26 @@ public class LinkedListDeque<T> {
         size += 1;
     }
 
-    public boolean isEmpty()
-        if(head){
+    public boolean isEmpty() {
+        if(head != null){
             return true;
         }
         return false;
+    }
     
     public int size(){
-        return size
+        return size;
     }
-    public void printDeque();
+    public void printDeque(){
+
+        // head                         tail
+        // (1) <-> (2) <-> (3) <-> (4) -> (5)
+        Node s = head;
+        while(s.next != null) {
+            System.out.println(s.item);
+            s = s.next;
+        }
+    }
 
     public T removeFirst(){
         // head          
@@ -61,7 +79,7 @@ public class LinkedListDeque<T> {
         head = head.next;
         //        head                 tail
         //   <- (2) -> (3) -> (4) -> (5)
-        if(head){
+        if(head != null){
             head.prev = null;
         }
 
@@ -78,8 +96,26 @@ public class LinkedListDeque<T> {
         // head                 tail
         // (1) -> (2) -> (3) -> (4) //-> (5)//
     }
-    public T get(int index);
-    public T getRecursive(int index);
+    public T get(int index){
+    
+        // out of bounds < >
+        // head
+        // tail
+
+        int counter = 0;
+        Node s = head;
+        while(s.next != null) {
+            if(counter == index){
+                return s.item;
+            }
+            s = s.next;
+            counter += 1;
+        }
+    }
+
+    public T getRecursive(int index){
+
+    }
 }
 
 // LinkedListDeque = new LinkedListDeque("Bulbasaur")
