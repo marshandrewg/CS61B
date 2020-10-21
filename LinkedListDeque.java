@@ -46,7 +46,11 @@ public class LinkedListDeque<T> {
     public boolean isEmpty();
     public int size();
     public void printDeque();
-    public T removeFirst();
+    public T removeFirst(){
+
+        head = head.next;
+        size -= 1;
+    }
     public T removeLast() {
         // head                         tail
         // (1) -> (2) -> (3) -> (4) -> (5)
