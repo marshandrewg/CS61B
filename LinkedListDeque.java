@@ -101,6 +101,13 @@ public class LinkedListDeque<T> {
         // out of bounds < >
         // head
         // tail
+        if(index < 0){
+            return null;
+        }
+        
+        if(index > size){
+            return null;
+        }
 
         int counter = 0;
         Node s = head;
