@@ -121,7 +121,17 @@ public class LinkedListDeque<T> {
     }
 
     public T getRecursive(int index){
-
+        // getRecursive - establish the base case, and with your starting value get closer
+        if(index == 0){
+            return head.item;
+        } else {
+            head = head.next;
+            return getRecursive(index - 1);
+        }
+        // index 
+        //            x        index
+        //          head                         tail
+        // (1) <-> (2) <-> (3) <-> //(4) -> (5)
     }
 }
 
