@@ -76,6 +76,7 @@ public class LinkedListDeque<T> {
         // head          
         // (1)
         //  <-> (2) <-> (3) <-> (4) -> (5)
+        T save = head.item;
         head = head.next;
         //        head                 tail
         //   <- (2) -> (3) -> (4) -> (5)
@@ -84,14 +85,16 @@ public class LinkedListDeque<T> {
         }
 
         size -= 1;
+        return save;
     }
     public T removeLast() {
         // head                         tail
         // (1) <-> (2) <-> (3) <-> (4) -> (5)
         
-        
+        T save = tail.item;
         tail = tail.prev;
-        size -= 1;        
+        size -= 1;
+        return save;
 
         // head                 tail
         // (1) -> (2) -> (3) -> (4) //-> (5)//
@@ -118,6 +121,8 @@ public class LinkedListDeque<T> {
             s = s.next;
             counter += 1;
         }
+
+        return null;
     }
 
     public T getRecursive(int index){
@@ -136,10 +141,10 @@ public class LinkedListDeque<T> {
 }
 
 // LinkedListDeque = new LinkedListDeque("Bulbasaur")
-LinkedListDeque.jackShit()
-sizeOfList = size(list)
-printedList = print(list)
-LinkedListDeque = new LinkedListDeque("Ivysaur")
+// LinkedListDeque.jackShit()
+// sizeOfList = size(list)
+// printedList = print(list)
+// LinkedListDeque = new LinkedListDeque("Ivysaur")
 
 // Bulbasaur
 // Ivysaur
