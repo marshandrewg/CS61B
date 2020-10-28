@@ -122,7 +122,7 @@ public class LinkedListDeque<T> {
             counter += 1;
         }
 
-        return null;
+        return s.item;
     }
 
     public T getRecursive(int index){
