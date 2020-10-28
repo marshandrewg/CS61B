@@ -22,5 +22,23 @@ public class LinkedListDequeTest {
     // expected, actual
   }
 
+
+  // Write tests for each method
+
+    // Think about covering all edges of the conditional statements
+    // @getBeforeBound
+
+    // @getAfterBound
+
+    // @getHead
+
+    // @getTail
+    /* Utility method for printing out empty checks. */
+    void addLastTest() {
+      LinkedListDeque<String> test= new LinkedListDeque<String>();
+      test.addLast("First");
+      assertEquals(firstString, test.get(0));
+  }
+
   
 } 
