@@ -37,8 +37,12 @@ public class LinkedListDeque<T> {
     size += 1;
   }
 
-  public void addLast(T item){
-    tail.next = new Node(item, null, tail);
+  /**
+   * Add Node with item value to end.
+   */
+  public void addLast(T item) {
+    
+    tail.next = new Node(item, null, tail); //method contents
 
     // head         tail
     // (1) -> (2) -> (3) -> (4) -> (5)
@@ -52,7 +56,7 @@ public class LinkedListDeque<T> {
   }
 
   public boolean isEmpty() {
-    if (head != null){
+    if (head != null) {
       return true;
     }
     return false;
