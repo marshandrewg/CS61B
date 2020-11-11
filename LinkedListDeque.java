@@ -28,7 +28,7 @@ public class LinkedListDeque<T> {
   int size;
 
   /**
-   * Add Node with item value to end.
+   * .
    */
   public LinkedListDeque() {
     head = null;
@@ -36,6 +36,9 @@ public class LinkedListDeque<T> {
     size = 0;
   }
 
+  /**
+   * Add Node with item value to front.
+   */
   public void addFirst(T item) {
     head = new Node(item, null, null);
     size += 1;
@@ -64,7 +67,7 @@ public class LinkedListDeque<T> {
   }
 
   /**
-   * Add Node with item value to end.
+   * Answers whether the list is Empty.
    */
   public boolean isEmpty() {
     if (head != null) {
@@ -78,7 +81,7 @@ public class LinkedListDeque<T> {
   }
 
   /**
-   * Add Node with item value to end.
+   * Show list separated by lines.
    */
   public void printDeque() {
     // head             tail
@@ -91,7 +94,7 @@ public class LinkedListDeque<T> {
   }
 
   /**
-   * Add Node with item value to end.
+   * Removes first Node from front.
    */
   public T removeFirst() {
     // head      
@@ -110,7 +113,7 @@ public class LinkedListDeque<T> {
   }
 
   /**
-   * Add Node with item value to end.
+   * Removes last Node from back.
    */
   public T removeLast() {
     // head             tail
@@ -126,7 +129,7 @@ public class LinkedListDeque<T> {
   }
 
   /**
-   * Add Node with item value to end.
+   * Returns Node specified by integer if exists.
    */
   public T get(int index) {
   
@@ -155,7 +158,7 @@ public class LinkedListDeque<T> {
   }
 
   /**
-   * Add Node with item value to end.
+   * Returns Node specified by integer if exists.
    */
   public T getRecursive(int index) {
     // getRecursive - establish the base case, and with your starting value get closer
