@@ -1,8 +1,11 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
+
 public class LinkedListDequeTest {
   
   private final String firstString = "First";
+  private final String lastString = "Last";
 
   @Test
   /* Utility method for printing out empty checks. */
@@ -22,23 +25,23 @@ public class LinkedListDequeTest {
     // expected, actual
   }
 
+  @Test
+
+  void addLastTest() {
+    LinkedListDeque<String> test = new LinkedListDeque<String>();
+    test.addLast("Last");
+    assertEquals(lastString, test.get(0));
+  }
+
 
   // Write tests for each method
 
-    // Think about covering all edges of the conditional statements
-    // @getBeforeBound
+  // Think about covering all edges of the conditional statements
 
-    // @getAfterBound
+  // @getBeforeBound
 
-    // @getHead
+  // @getAfterBound
 
-    // @getTail
-    /* Utility method for printing out empty checks. */
-    void addLastTest() {
-      LinkedListDeque<String> test= new LinkedListDeque<String>();
-      test.addLast("First");
-      assertEquals(firstString, test.get(0));
-  }
+  // @getHead
 
-  
 } 

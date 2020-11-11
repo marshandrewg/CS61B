@@ -8,8 +8,9 @@ public class LinkedListDeque<T> {
     public Node prev;
 
     // Run as public vs private 
+
     /**
-     * Creates a node object
+     * Creates a node object.
      * @param i item to add to node
      * @param n next Node
      * @param p previous node
@@ -26,13 +27,16 @@ public class LinkedListDeque<T> {
   Node tail;
   int size;
 
+  /**
+   * Add Node with item value to end.
+   */
   public LinkedListDeque() {
     head = null;
     tail = null;
     size = 0;
   }
 
-  public void addFirst(T item){
+  public void addFirst(T item) {
     head = new Node(item, null, null);
     size += 1;
   }
@@ -42,7 +46,11 @@ public class LinkedListDeque<T> {
    */
   public void addLast(T item) {
     
-    tail.next = new Node(item, null, tail); //method contents
+    if (head == null) {
+      tail = new Node(item, null, tail);
+    } else {
+      tail.next = new Node(item, null, tail); //method contents
+    }
 
     // head         tail
     // (1) -> (2) -> (3) -> (4) -> (5)
@@ -55,6 +63,9 @@ public class LinkedListDeque<T> {
     size += 1;
   }
 
+  /**
+   * Add Node with item value to end.
+   */
   public boolean isEmpty() {
     if (head != null) {
       return true;
@@ -65,7 +76,11 @@ public class LinkedListDeque<T> {
   public int size() {
     return size;
   }
-  public void printDeque(){
+
+  /**
+   * Add Node with item value to end.
+   */
+  public void printDeque() {
     // head             tail
     // (1) <-> (2) <-> (3) <-> (4) -> (5)
     Node s = head;
@@ -75,7 +90,10 @@ public class LinkedListDeque<T> {
     }
   }
 
-  public T removeFirst(){
+  /**
+   * Add Node with item value to end.
+   */
+  public T removeFirst() {
     // head      
     // (1)
     //  <-> (2) <-> (3) <-> (4) -> (5)
@@ -83,13 +101,17 @@ public class LinkedListDeque<T> {
     head = head.next;
     //    head         tail
     //   <- (2) -> (3) -> (4) -> (5)
-    if(head != null){
+    if (head != null) {
       head.prev = null;
     }
 
     size -= 1;
     return save;
   }
+
+  /**
+   * Add Node with item value to end.
+   */
   public T removeLast() {
     // head             tail
     // (1) <-> (2) <-> (3) <-> (4) -> (5)
@@ -102,23 +124,27 @@ public class LinkedListDeque<T> {
     // head         tail
     // (1) -> (2) -> (3) -> (4) //-> (5)//
   }
-  public T get(int index){
+
+  /**
+   * Add Node with item value to end.
+   */
+  public T get(int index) {
   
     // out of bounds < >
     // head
     // tail
-    if(index < 0){
+    if (index < 0) {
       return null;
     }
     
-    if(index > size){
+    if (index > size) {
       return null;
     }
 
     int counter = 0;
     Node s = head;
-    while(s.next != null) {
-      if(counter == index){
+    while (s.next != null) {
+      if (counter == index) {
         return s.item;
       }
       s = s.next;
@@ -128,9 +154,12 @@ public class LinkedListDeque<T> {
     return s.item;
   }
 
-  public T getRecursive(int index){
+  /**
+   * Add Node with item value to end.
+   */
+  public T getRecursive(int index) {
     // getRecursive - establish the base case, and with your starting value get closer
-    if(index == 0){
+    if (index == 0) {
       return head.item;
     } else {
       head = head.next;
