@@ -71,9 +71,10 @@ public class LinkedListDeque<T> {
    */
   public boolean isEmpty() {
     if (head != null) {
-      return true;
+    // if (size = 0) {
+      return false;
     }
-    return false;
+    return true;
   }
   
   public int size() {
