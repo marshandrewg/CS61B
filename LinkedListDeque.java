@@ -40,7 +40,18 @@ public class LinkedListDeque<T> {
    * Add Node with item value to front.
    */
   public void addFirst(T item) {
-    head = new Node(item, null, null);
+    if (head == null) {
+      head = new Node(item, null, null);
+      tail = head;
+    } else {
+      Node newHead = new Node(item, null, null);
+      // (newHead) <- (head) ... (tail)   (newHead)
+      head.prev = newHead;
+      newHead.next = head;
+      head = newHead;
+      // (newHead) <-> (head) ... (tail)   (newHead
+      // (head) <-> (head)
+    }
     size += 1;
   }
 
@@ -50,9 +61,14 @@ public class LinkedListDeque<T> {
   public void addLast(T item) {
     
     if (head == null) {
-      tail = new Node(item, null, tail);
+      addFirst(item);
     } else {
-      tail.next = new Node(item, null, tail); //method contents
+      Node newTail = new Node(item, null, null);
+      tail.next = newTail;
+      newTail.prev = tail;
+      tail = newTail;
+      // ...(tailData)  <> (new)
+      
     }
 
     // head         tail
@@ -62,7 +78,7 @@ public class LinkedListDeque<T> {
     // head            tail
     // (1) -> (2) -> (3) -> (4) -> (5) -> (1) ....
     
-    tail = tail.next;
+    
     size += 1;
   }
 
